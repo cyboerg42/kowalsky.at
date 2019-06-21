@@ -27,9 +27,9 @@ def main():
 @app.route("/blog")
 def blog():
     file = open(txt_src_folder + "blog.md", "r")
-    html = html_head("Bl0g") + "<body>" + top_bar('blog') + md_file2html(file)
+    html = html_head("bl0g") + "<body>" + top_bar('blog') + md_file2html(file)
     html = html + md2html(blog_dynamic(blog_src_folder)) # dynamic content
-    return html
+    return html + "</body></html>"
 
 @app.route("/blog/<url>")
 def blog_page(url):
